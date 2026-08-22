@@ -2,11 +2,11 @@
 
 Microservicio correspondiente al **caso casoEjemplo — TicketWave** (Venta y control de acceso de entradas para eventos en vivo) de la Evaluación Parcial N°1.
 
-| | |
-|---|---|
-| Stack | Spring Boot 3.3 · Java 21 · Maven · Spring Data JPA · H2 · springdoc-openapi |
-| Calidad | JaCoCo cobertura LINE 100% · Cucumber (BDD) alineado a endpoints REST |
-| Entrega | Docker / Docker Compose |
+|         |                                                                                   |
+| ------- | --------------------------------------------------------------------------------- |
+| Stack   | Spring Boot 3.3 · Java 21 · Maven · Spring Data JPA · H2 · springdoc-openapi |
+| Calidad | JaCoCo cobertura LINE 100% · Cucumber (BDD) alineado a endpoints REST            |
+| Entrega | Docker / Docker Compose                                                           |
 
 ## Responsabilidad (SRP)
 
@@ -23,13 +23,13 @@ Al ejecutar el servicio, `http://localhost:8080/` muestra la página de presenta
 
 ## Endpoints
 
-| Método | Ruta | Descripción |
-|--------|------|-------------|
-| GET | `/api/pagos` | Lista todos los recursos |
-| GET | `/api/pagos/{id}` | Obtiene un recurso por id |
-| POST | `/api/pagos` | Crea un recurso |
-| PUT | `/api/pagos/{id}` | Actualiza un recurso |
-| DELETE | `/api/pagos/{id}` | Elimina un recurso |
+| Método | Ruta                | Descripción              |
+| ------- | ------------------- | ------------------------- |
+| GET     | `/api/pagos`      | Lista todos los recursos  |
+| GET     | `/api/pagos/{id}` | Obtiene un recurso por id |
+| POST    | `/api/pagos`      | Crea un recurso           |
+| PUT     | `/api/pagos/{id}` | Actualiza un recurso      |
+| DELETE  | `/api/pagos/{id}` | Elimina un recurso        |
 
 ## Documentación del proyecto
 
@@ -41,7 +41,7 @@ La documentación completa está en la carpeta [`docs/`](docs/):
 - [`docs/03_Pruebas.md`](docs/03_Pruebas.md) — tests unitarios, cobertura y Cucumber
 - [`docs/04_Despliegue.md`](docs/04_Despliegue.md) — Docker, Docker Compose e integración
 
-## Cómo ejecutar locmente
+## Cómo ejecutar localmente
 
 ```bash
 mvn spring-boot:run
@@ -60,3 +60,7 @@ docker compose up --build
 mvn test      # unit tests + Cucumber
 mvn verify    # + verificación de cobertura JaCoCo (100% LINE, falla si baja)
 ```
+
+## Ramificación
+
+Elegimos GitFlow porque el curso se desarrolla durante todo el semestre y cada entrega (EP01, EP02, EP03) es un hito estable. La rama develop nos permite integrar features de ambos integrantes sin ensuciar main, y la rama hotfix/ nos deja corregir un bug en producción sin interrumpir el trabajo en desarrollo. Además, GitFlow separa explícitamente el código estable (main) del código en integración (develop), lo que da trazabilidad clara del código frente a lo que se pide en las rúbricas del curso
